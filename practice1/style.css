@@ -1,0 +1,7 @@
+/*
+ * Angular Theme
+ */
+
+@media screen and (max-width: 547px) {
+	body{color:red;}
+}
