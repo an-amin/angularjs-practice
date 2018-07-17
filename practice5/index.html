@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en" ng-app="myModule">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>AngularJS #5</title>
+	<link rel="icon" href="https://angularjs.org/favicon.ico">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+	<!-- FontAwesome CSS -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="./style.css">
+	
+</head>
+
+
+<body>
+	
+	<div class="container" ng-controller="myController">
+		<div class="d-none">
+			<h1>{{title}} <br><small>{{subTitle}}</small></h1>
+			<p>ng-filter</p>
+			<hr>
+			limitTo & orderBy
+			<table class="table">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>
+							<input class="form-control" type="text" placeholder="search">
+						</th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="book in books | limitTo:5:0 | orderBy:'release'">
+						<td><img class="img-fluid img-responsive img-thumb" ng-src="{{book.cover}}" alt="{{book.title}}"></td>
+						<td>
+							<h3>{{book.title}} <br><small class="text-muted">{{book.author}}</small></h3>
+						</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<th>#</th>
+						<th>#</th>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
+
+
+		<h1>Employees</h1>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Position</th>
+					<th>Salary</th>
+					<th>Status</th>
+				</tr>
+				<tr>
+					<th>
+						<input class="form-control" type="text" ng-model="search.name">
+					</th>
+					<th>
+						<input class="form-control" type="text" ng-model="search.position">
+					</th>
+					<th>
+						<input type="range" class="form-control-range" ng-model="search.salary">
+					</th>
+					<th>
+						<select class="form-control" ng-model="search.status">
+							<option value="">All</option>
+							<option value="2">Advanced</option>
+							<option value="1">Paid</option>
+							<option value="0">Unpaid</option>
+						</select>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="emp in employees|orderBy:'-salary'|filter:search">
+					<td>{{emp.name}}</td>
+					<td>{{emp.position}}</td>
+					<td>{{emp.salary|currency:'৳ '}}</td>
+					<td>{{emp.status|salaryStatus}}</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<th>Name</th>
+					<th>Position</th>
+					<th>Salary</th>
+					<th>Status</th>
+				</tr>
+			</tfoot>
+		</table>
+	</div>
+
+	
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+	<script src="./script.js"></script>
+	<script src="./app.js"></script>
+</body>
+</html>
