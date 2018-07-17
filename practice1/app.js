@@ -5,6 +5,10 @@
  var myApp = angular.module('myModule', []);
 
  var myController = function($scope){
+ 	
+	$scope.title="Learning AngularJS";
+	$scope.subTitle="Practice 1";
+
  	$scope.msg = 'Hello world';
  	$scope.students = [
  		{

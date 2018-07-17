@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en" ng-app="myModule">
+<html lang="en" ng-app="ourModule">
 <head>
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>AngularJS #1</title>
+	<title>AngularJS #3</title>
 	<link rel="icon" href="https://angularjs.org/favicon.ico">
 
 	<!-- Bootstrap CSS -->
@@ -19,20 +19,23 @@
 
 <body>
 	
-	<div class="container" ng-controller="myCtrl">
-		<h1 class="text-center">{{title}} <br><small>{{subTitle}}</small></h1>
-		<hr>
-		<table align="center">
-			<tr>
-				<td><input type="text" placeholder="First Name" ng-model="fName"></td>
-				<td><input type="text" placeholder="First Name" ng-model="lName"></td>
-			</tr>
-		</table>
-		<h2 align="center">Hello, <b>{{fName+' '+lName}}</b>, welcome to AngularJS.</h2>
-			
+	<div class="container" ng-controller="ourController">
 		
-		<h1>{{ name }}</h1>
-		<h1>{{students[0].name}}</h1>
+		<h1 class="text-center">{{title}}<br><small>{{subTitle}}</small></h1>
+		<p>ng-show & ng-hide</p>
+		<hr>
+		<div class="" ng-show="var1">
+			<p>show true:<br>this is a block<br>this is a block</p>
+		</div>
+		<div class="" ng-show="var2">
+			<p>show false:<br>this is a block<br>this is a block</p>
+		</div>
+		<div class="" ng-hide="var3">
+			<p>hide true:<br>this is a block<br>this is a block</p>
+		</div>
+		<div class="" ng-hide="var4">
+			<p>hide false:<br>this is a block<br>this is a block</p>
+		</div>
 	</div>
 
 	
