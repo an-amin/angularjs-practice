@@ -10,10 +10,9 @@ var myController = function($scope, $log, $location, $http){
 	
 	$scope.showEmployeeData = function(){
 		$log.info('showing data');
-	$http.get('employeeData.json').then(function(response){
-		$scope.employees = response.data;
-	});
-
+		$http.get('employeeData.json').then(function(response){
+			$scope.employees = response.data;
+		});
 	};
 	$scope.hideEmployeeData = function(){
 		$log.info('hiding data');
