@@ -4,22 +4,6 @@
 
 var myApp = angular.module('myModule', ['ngRoute']);
 
-var myCtrl = function($scope){
-	$scope.title = 'Learning Angular';
-	$scope.subTitle = 'Practice 8 (angular route)';
-	
-	$scope.dhaka = 'Hello Dhaka';
-	$scope.chittagong = 'Hello Chittagong';
-	$scope.rajshahi = 'Hello Rajshahi';
-	$scope.khulna = 'Hello Khulna';
-	$scope.rangpur = 'Hello Rangpur';
-	$scope.mymensingh = 'Hello Mymensingh';
-	$scope.sylhet = 'Hello Sylhet';
-	$scope.barishal = 'Hello Barishal';
-};
-
-myApp.controller('myCtrl', myCtrl);
-
 myApp.config(function($routeProvider){
 	$routeProvider
 		.when('/dhaka', {
@@ -55,3 +39,19 @@ myApp.config(function($routeProvider){
 			controller	:'myCtrl'
 		});
 });
+
+var myCtrl = function($scope){
+	$scope.title = 'Learning Angular';
+	$scope.subTitle = 'Practice 8 (angular route)';
+	
+	$scope.dhaka = 'Hello Dhaka';
+	$scope.chittagong = 'Hello Chittagong';
+	$scope.rajshahi = 'Hello Rajshahi';
+	$scope.khulna = 'Hello Khulna';
+	$scope.rangpur = 'Hello Rangpur';
+	$scope.mymensingh = 'Hello Mymensingh';
+	$scope.sylhet = 'Hello Sylhet';
+	$scope.barishal = 'Hello Barishal';
+};
+
+myApp.controller('myCtrl', myCtrl);
