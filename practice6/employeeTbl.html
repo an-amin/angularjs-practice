@@ -1,0 +1,53 @@
+
+		<h1>Employees &nbsp;</h1>
+
+		<div class="form-group">
+			<button ng-click="showEmployeeData()" class="btn btn-sm btn-secondary">Load Data</button>
+			<button ng-click="hideEmployeeData()" class="btn btn-sm btn-secondary">Unload Data</button>
+		</div>
+		
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Position</th>
+					<th>Salary</th>
+					<th>Status</th>
+				</tr>
+				<tr>
+					<th>
+						<input class="form-control" type="text" ng-model="search.name">
+					</th>
+					<th>
+						<input class="form-control" type="text" ng-model="search.position">
+					</th>
+					<th>
+						<input type="range" class="form-control-range" ng-model="search.salary">
+					</th>
+					<th>
+						<select class="form-control" ng-model="search.status">
+							<option value="">All</option>
+							<option value="2">Advanced</option>
+							<option value="1">Paid</option>
+							<option value="0">Unpaid</option>
+						</select>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="emp in employees|orderBy:'-salary'|filter:search">
+					<td>{{emp.name}}</td>
+					<td>{{emp.position}}</td>
+					<td>{{emp.salary|currency:'৳ '}}</td>
+					<td>{{emp.status|salaryStatus}}</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<th>Name</th>
+					<th>Position</th>
+					<th>Salary</th>
+					<th>Status</th>
+				</tr>
+			</tfoot>
+		</table>
