@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en" ng-app="myModule">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Practice</title>
+	<link rel="icon" href="https://angularjs.org/favicon.ico">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+	<!-- FontAwesome CSS -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="./style.css">
+	
+</head>
+
+
+<body>
+	
+	<div class="container" ng-controller="myCtrl">
+		<h1 class="text-center">{{title}}</h1>
+		<h2 class="text-center">{{subTitle}}</h2>
+		<hr>
+		
+		<div class="row">
+
+			<div class="col-3">
+				<ul>
+					<li><a href="#/dhaka">dhaka</a></li>
+					<li><a href="#/chittagong">chittagong</a></li>
+					<li><a href="#/rangpur">rangpur</a></li>
+					<li><a href="#/rajshahi">khulna</a></li>
+					<li><a href="#/khulna">khulna</a></li>
+					<li><a href="#/sylhet">sylhet</a></li>
+					<li><a href="#/barishal">barishal</a></li>
+					<li><a href="#/mymensingh">mymensingh</a></li>
+				</ul>
+			</div>
+			<div class="col-9">
+				<div class="" ng-view></div>
+			</div>
+		
+		</div>
+
+	</div>
+
+
+	
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-route.min.js"></script>
+
+	<script src="./script.js"></script>
+	<script src="./app.js"></script>
+</body>
+</html>
